@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Жарық Дент — Стоматология в Алматы</title>
+  <meta name="description"
+    content="Жарық Дент — современная семейная стоматология в Алматы. Лечение, имплантация, отбеливание, детская стоматология. Запись онлайн 24/7." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Жарық Дент","telephone":"+77273124567","address":{"@type":"PostalAddress","streetAddress":"ул. Байзакова 121","addressLocality":"Алматы","addressCountry":"KZ"},"openingHours":["Mo-Fr 09:00-20:00","Sa 10:00-18:00"]}</script>
+</head>
+
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <svg class="preloader__tooth" viewBox="0 0 60 60" fill="none">
+        <path
+          d="M30 8C22 8 15 15 15 21c0 4 1.5 7 3 9.5L21 46c.8 2.5 2.5 3.5 4 3.5s3.2-.8 4-3.5l1-4 1 4c.8 2.5 2.5 3.5 4 3.5s3.2-1 4-3.5l3-15.5c1.5-2.5 3-5.5 3-9.5C45 15 38 8 30 8z"
+          fill="url(#pg)" stroke="none" />
+        <circle cx="38" cy="17" r="3" fill="#27AE60" />
+        <defs>
+          <linearGradient id="pg" x1="15" y1="8" x2="45" y2="50">
+            <stop offset="0%" stop-color="#1A5276" />
+            <stop offset="100%" stop-color="#2E86C1" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="preloader__bar">
+        <div class="preloader__fill"></div>
+      </div>
+      <p>Жарық Дент</p>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">
+        <div class="logo-icon">
+          <svg width="30" height="30" viewBox="0 0 60 60" fill="none">
+            <path
+              d="M30 8C22 8 15 15 15 21c0 4 1.5 7 3 9.5L21 46c.8 2.5 2.5 3.5 4 3.5s3.2-.8 4-3.5l1-4 1 4c.8 2.5 2.5 3.5 4 3.5s3.2-1 4-3.5l3-15.5c1.5-2.5 3-5.5 3-9.5C45 15 38 8 30 8z"
+              fill="#fff" />
+            <circle cx="38" cy="17" r="3" fill="#27AE60" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">Жарық Дент</span>
+          <span class="logo-sub">Стоматология · Алматы</span>
+        </div>
+      </a>
+      <nav class="navbar__menu" id="navMenu">
+        <a href="#about" class="nav-link" data-ru="О клинике" data-kz="Клиника туралы">О клинике</a>
+        <a href="#doctors" class="nav-link" data-ru="Врачи" data-kz="Дәрігерлер">Врачи</a>
+        <a href="#services" class="nav-link" data-ru="Услуги" data-kz="Қызметтер">Услуги</a>
+        <a href="#reviews" class="nav-link" data-ru="Отзывы" data-kz="Пікірлер">Отзывы</a>
+        <a href="#contacts" class="nav-link" data-ru="Контакты" data-kz="Контактілер">Контакты</a>
+      </nav>
+      <div class="navbar__actions">
+        <div class="lang-switcher">
+          <button class="lang-btn active" id="langRu" onclick="setLang('ru')">RU</button>
+          <button class="lang-btn" id="langKz" onclick="setLang('kz')">KZ</button>
+        </div>
+        <a href="#booking" class="btn btn-cta">
+          <i class="fa-regular fa-calendar-check"></i>
+          <span data-ru="Записаться" data-kz="Жазылу">Записаться</span>
+        </a>
+        <button class="burger" id="burger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__particles" id="particles"></div>
+    <div class="hero__gradient"></div>
+    <div class="container hero__content">
+      <div class="hero__left reveal-left">
+        <div class="hero__pill">
+          <span class="pill-dot"></span>
+          <span data-ru="Принимаем пациентов с 2014 года" data-kz="2014 жылдан бастап пациенттер қабылдаймыз">Принимаем
+            пациентов с 2014 года</span>
+        </div>
+        <h1 class="hero__title">
+          <span data-ru="Здоровая улыбка —" data-kz="Сау күлімсіреу —">Здоровая улыбка —</span>
+          <em data-ru="ваша уверенность" data-kz="сіздің сенімділігіңіз">ваша уверенность</em>
+        </h1>
+        <p class="hero__sub"
+          data-ru="Современная стоматология в сердце Алматы. Без боли, без очередей — только забота о вашей улыбке."
+          data-kz="Алматы жүрегіндегі заманауи стоматология. Ауырусыз, кезексіз — тек күлімсіреуіңізге қамқорлық.">
+          Современная стоматология в сердце Алматы. Без боли, без очередей — только забота о вашей улыбке.
+        </p>
+        <div class="hero__actions">
+          <a href="#booking" class="btn btn-green btn-hero">
+            <i class="fa-solid fa-calendar-plus"></i>
+            <span data-ru="Записаться на приём" data-kz="Қабылдауға жазылу">Записаться на приём</span>
+          </a>
+          <a href="tel:+77273124567" class="btn btn-ghost">
+            <i class="fa-solid fa-phone"></i>
+            <span>+7 (727) 312-45-67</span>
+          </a>
+        </div>
+        <div class="hero__badges">
+          <div class="hero__badge-item">
+            <span class="badge-num" data-target="10">0</span>
+            <span class="badge-label" data-ru="лет опыта" data-kz="жыл тәжірибе">лет опыта</span>
+          </div>
+          <div class="badge-sep"></div>
+          <div class="hero__badge-item">
+            <span class="badge-num" data-target="4800">0</span>
+            <span class="badge-plus">+</span>
+            <span class="badge-label" data-ru="пациентов" data-kz="пациент">пациентов</span>
+          </div>
+          <div class="badge-sep"></div>
+          <div class="hero__badge-item">
+            <span class="badge-num" data-target="2">0</span>
+            <span class="badge-label" data-ru="года гарантии" data-kz="жыл кепілдік">года гарантии</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__right reveal-right">
+        <div class="hero__card-float">
+          <div class="float-card fc1">
+            <i class="fa-solid fa-star" style="color:#f39c12"></i>
+            <div>
+              <strong>5.0 рейтинг</strong>
+              <small>Google &amp; 2GIS</small>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="visual-ring r1"></div>
+            <div class="visual-ring r2"></div>
+            <div class="visual-ring r3"></div>
+            <div class="visual-center">
+              <svg viewBox="0 0 120 120" width="120" height="120" fill="none">
+                <circle cx="60" cy="60" r="58" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)"
+                  stroke-width="1" />
+                <path
+                  d="M60 20C42 20 28 34 28 46c0 9 3 15 7 20L42 92c1.5 5 5 7 8.5 7s7-1.5 8.5-7l2-8 2 8c1.5 5 5 7 8.5 7s7-2 8.5-7l7-26c4-5 7-11 7-20C92 34 78 20 60 20z"
+                  fill="url(#hero-g)" />
+                <circle cx="78" cy="36" r="7" fill="#27AE60" opacity="0.9" />
+                <defs>
+                  <linearGradient id="hero-g" x1="28" y1="20" x2="92" y2="100">
+                    <stop stop-color="#5dade2" />
+                    <stop offset="1" stop-color="#1a5276" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <div class="float-card fc2">
+            <i class="fa-solid fa-shield-halved" style="color:#27AE60"></i>
+            <div>
+              <strong data-ru="Гарантия 2 года" data-kz="2 жыл кепілдік">Гарантия 2 года</strong>
+              <small data-ru="на все работы" data-kz="барлық жұмыстарға">на все работы</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__wave">
+      <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none">
+        <path d="M0 40 C360 80 1080 0 1440 40 L1440 80 L0 80 Z" fill="#ffffff" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag-wrap"><span class="section-tag" data-ru="О нас" data-kz="Біз туралы">О нас</span></div>
+        <h2 class="section-title" data-ru="Почему нам доверяют" data-kz="Неліктен бізге сенеді">Почему нам <span
+            class="gradient-text">доверяют</span></h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__feature reveal">
+          <div class="feature-num">01</div>
+          <div class="feature-icon"><i class="fa-solid fa-microscope"></i></div>
+          <h3 data-ru="Цифровые технологии" data-kz="Цифрлық технологиялар">Цифровые технологии</h3>
+          <p data-ru="3D-рентген, цифровые слепки, CAD/CAM коронки за 1 визит."
+            data-kz="3D-рентген, цифрлық таңбалар, 1 визитте CAD/CAM тәждер.">3D-рентген, цифровые слепки, CAD/CAM
+            коронки за 1 визит.</p>
+        </div>
+        <div class="about__feature reveal">
+          <div class="feature-num">02</div>
+          <div class="feature-icon"><i class="fa-solid fa-user-doctor"></i></div>
+          <h3 data-ru="Опытные специалисты" data-kz="Тәжірибелі мамандар">Опытные специалисты</h3>
+          <p data-ru="4 врача с опытом от 7 до 14 лет. Постоянное обучение в Европе и Корее."
+            data-kz="Тәжірибесі 7-14 жыл аралығындағы 4 дәрігер. Еуропа мен Кореяда тұрақты оқу.">4 врача с опытом от 7
+            до 14 лет. Постоянное обучение в Европе и Корее.</p>
+        </div>
+        <div class="about__feature reveal">
+          <div class="feature-num">03</div>
+          <div class="feature-icon"><i class="fa-solid fa-shield-virus"></i></div>
+          <h3 data-ru="Полная стерилизация" data-kz="Толық стерилизация">Полная стерилизация</h3>
+          <p data-ru="Автоклавирование всех инструментов. Контроль инфекции по стандартам ВОЗ."
+            data-kz="Барлық құралдарды автоклавтеу. ДДҰ стандарттары бойынша инфекция бақылауы.">Автоклавирование всех
+            инструментов. Контроль инфекции по стандартам ВОЗ.</p>
+        </div>
+        <div class="about__feature reveal">
+          <div class="feature-num">04</div>
+          <div class="feature-icon"><i class="fa-solid fa-children"></i></div>
+          <h3 data-ru="Семейная клиника" data-kz="Отбасылық клиника">Семейная клиника</h3>
+          <p data-ru="Принимаем пациентов с 3 лет. Детский кабинет с анимацией и игрушками."
+            data-kz="3 жастан бастап пациенттер қабылдаймыз. Анимация мен ойыншықтары бар балалар кабинеті.">Принимаем
+            пациентов с 3 лет. Детский кабинет с анимацией и игрушками.</p>
+        </div>
+      </div>
+
+      <div class="about__info-bar reveal">
+        <div class="info-bar-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div><strong data-ru="Адрес" data-kz="Мекенжай">Адрес</strong><span>ул. Байзакова 121, БЦ «Medpark», оф.
+              3</span></div>
+        </div>
+        <div class="info-bar-item">
+          <i class="fa-solid fa-phone"></i>
+          <div><strong data-ru="Телефон" data-kz="Телефон">Телефон</strong><a href="tel:+77273124567">+7 (727)
+              312-45-67</a></div>
+        </div>
+        <div class="info-bar-item">
+          <i class="fa-solid fa-clock"></i>
+          <div><strong data-ru="Режим работы" data-kz="Жұмыс режимі">Режим работы</strong><span
+              data-ru="Пн–Пт 9:00–20:00 · Сб 10:00–18:00" data-kz="Дс–Жм 9:00–20:00 · Сб 10:00–18:00">Пн–Пт 9:00–20:00 ·
+              Сб 10:00–18:00</span></div>
+        </div>
+        <div class="info-bar-item">
+          <i class="fa-solid fa-certificate"></i>
+          <div><strong data-ru="Лицензия" data-kz="Лицензия">Лицензия</strong><span>МЗ РК №0012345 · 10.03.2014</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTORS -->
+  <section class="section section--dark doctors" id="doctors">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag-wrap"><span class="section-tag light" data-ru="Команда" data-kz="Команда">Команда</span>
+        </div>
+        <h2 class="section-title light" data-ru="Наши специалисты" data-kz="Біздің мамандар">Наши <span
+            class="gradient-text">специалисты</span></h2>
+        <p class="section-sub light" data-ru="Врачи с международной практикой и многолетним опытом"
+          data-kz="Халықаралық тәжірибе мен көпжылдық тәжірибесі бар дәрігерлер">Врачи с международной практикой и
+          многолетним опытом</p>
+      </div>
+      <div class="doctors__grid">
+
+        <div class="doctor-card reveal">
+          <div class="doctor-card__top" style="--dc:#1A5276">
+            <div class="dc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+            <div class="dc-exp"><span data-target="14">0</span> <small data-ru="лет" data-kz="жыл">лет</small></div>
+          </div>
+          <div class="doctor-card__body">
+            <div class="dc-badge" data-ru="Главврач" data-kz="Бас дәрігер">Главврач</div>
+            <h3>Айгерим Сейткали</h3>
+            <p class="dc-spec" data-ru="Стоматолог-терапевт" data-kz="Стоматолог-терапевт">Стоматолог-терапевт</p>
+            <p class="dc-desc" data-ru="КазНМУ, 2010. Корневые каналы, реставрации."
+              data-kz="ҚазҰМУ, 2010. Түбір өзекшелері, қалпына келтіру.">КазНМУ, 2010. Корневые каналы, реставрации.</p>
+            <a href="#booking" class="btn dc-btn" data-ru="Записаться →" data-kz="Жазылу →">Записаться →</a>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-card__top" style="--dc:#27AE60">
+            <div class="dc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+            <div class="dc-exp"><span data-target="9">0</span> <small data-ru="лет" data-kz="жыл">лет</small></div>
+          </div>
+          <div class="doctor-card__body">
+            <div class="dc-badge" data-ru="Ортопед" data-kz="Ортопед">Ортопед</div>
+            <h3>Дамир Ахметов</h3>
+            <p class="dc-spec" data-ru="Ортопед-протезист" data-kz="Ортопед-протезист">Ортопед-протезист</p>
+            <p class="dc-desc" data-ru="Виниры, коронки, импланты. Стажировка Сеул 2019."
+              data-kz="Винирлер, тәждер, импланттар. Сеул тағылымдама 2019.">Виниры, коронки, импланты. Стажировка Сеул
+              2019.</p>
+            <a href="#booking" class="btn dc-btn" data-ru="Записаться →" data-kz="Жазылу →">Записаться →</a>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-card__top" style="--dc:#8e44ad">
+            <div class="dc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+            <div class="dc-exp"><span data-target="7">0</span> <small data-ru="лет" data-kz="жыл">лет</small></div>
+          </div>
+          <div class="doctor-card__body">
+            <div class="dc-badge" data-ru="Детский" data-kz="Балалар">Детский</div>
+            <h3>Назгуль Бекова</h3>
+            <p class="dc-spec" data-ru="Детский стоматолог" data-kz="Балалар стоматологы">Детский стоматолог</p>
+            <p class="dc-desc" data-ru="С детьми от 3 лет. Билингвальный приём (KZ/RU)."
+              data-kz="3 жастан балалармен. Қос тілді қабылдау (KZ/RU).">С детьми от 3 лет. Билингвальный приём (KZ/RU).
+            </p>
+            <a href="#booking" class="btn dc-btn" data-ru="Записаться →" data-kz="Жазылу →">Записаться →</a>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-card__top" style="--dc:#e67e22">
+            <div class="dc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+            <div class="dc-exp"><span data-target="11">0</span> <small data-ru="лет" data-kz="жыл">лет</small></div>
+          </div>
+          <div class="doctor-card__body">
+            <div class="dc-badge" data-ru="Хирург" data-kz="Хирург">Хирург</div>
+            <h3>Рустем Касымов</h3>
+            <p class="dc-spec" data-ru="Хирург-имплантолог" data-kz="Хирург-имплантолог">Хирург-имплантолог</p>
+            <p class="dc-desc" data-ru="Синус-лифтинг, костная пластика, сложные удаления."
+              data-kz="Синус-лифтинг, сүйек пластикасы, күрделі жұлулар.">Синус-лифтинг, костная пластика, сложные
+              удаления.</p>
+            <a href="#booking" class="btn dc-btn" data-ru="Записаться →" data-kz="Жазылу →">Записаться →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag-wrap"><span class="section-tag" data-ru="Прайс-лист"
+            data-kz="Баға тізімі">Прайс-лист</span></div>
+        <h2 class="section-title" data-ru="Услуги и цены" data-kz="Қызметтер мен бағалар">Услуги и <span
+            class="gradient-text">цены</span></h2>
+        <p class="section-sub" data-ru="Прозрачное ценообразование — никаких скрытых платежей"
+          data-kz="Мөлдір баға белгілеу — ешқандай жасырын төлемдер">Прозрачное ценообразование — никаких скрытых
+          платежей</p>
+      </div>
+
+      <div class="services__tabs reveal">
+        <button class="tab-btn active" onclick="switchTab(event,'therapy')" data-ru="Терапия"
+          data-kz="Терапия">Терапия</button>
+        <button class="tab-btn" onclick="switchTab(event,'whitening')" data-ru="Отбеливание"
+          data-kz="Ағарту">Отбеливание</button>
+        <button class="tab-btn" onclick="switchTab(event,'implants')" data-ru="Имплантация"
+          data-kz="Имплантация">Имплантация</button>
+        <button class="tab-btn" onclick="switchTab(event,'ortho')" data-ru="Ортодонтия"
+          data-kz="Ортодонтия">Ортодонтия</button>
+        <button class="tab-btn" onclick="switchTab(event,'kids')" data-ru="Детская" data-kz="Балалар">Детская</button>
+        <button class="tab-btn" onclick="switchTab(event,'surgery')" data-ru="Хирургия"
+          data-kz="Хирургия">Хирургия</button>
+      </div>
+
+      <div class="services__panel active reveal" id="panel-therapy">
+        <div class="svc-row"><span class="svc-name" data-ru="Лечение кариеса" data-kz="Кариесті емдеу">Лечение
+            кариеса</span><span class="svc-price">от 12 000 ₸</span></div>
+        <div class="svc-row"><span class="svc-name" data-ru="Пломба световая" data-kz="Жарық пломба">Пломба
+            световая</span><span class="svc-price">от 15 000 ₸</span></div>
+        <div class="svc-row"><span class="svc-name" data-ru="Лечение пульпита" data-kz="Пульпитті емдеу">Лечение
+            пульпита</span><span class="svc-price">от 22 000 ₸</span></div>
+        <div class="svc-cta"><a href="#booking" class="btn btn-green" data-ru="Записаться бесплатно →"
+            data-kz="Тегін жазылу →">Записаться бесплатно →</a></div>
+      </div>
+      <div class="services__panel reveal" id="panel-whitening">
+        <div class="svc-row"><span class="svc-name">Zoom 4</span><span class="svc-price">85 000 ₸</span></div>
+        <div class="svc-row"><span class="svc-name" data-ru="Домашнее (каппы)" data-kz="Үйде (каппалар)">Домашнее
+            (каппы)</span><span class="svc-price">45 000 ₸</span></div>
+        <div class="svc-cta"><a href="#booking" class="btn btn-green" data-ru="Записаться бесплатно →"
+            data-kz="Тегін жазылу →">Записаться бесплатно →</a></div>
+      </div>
+      <div class="services__panel reveal" id="panel-implants">
+        <div class="svc-row"><span class="svc-name" data-ru="Имплант + коронка" data-kz="Имплант + тәж">Имплант +
+            коронка</span><span class="svc-price">от 250 000 ₸</span></div>
+        <div class="svc-row"><span class="svc-name" data-ru="Консультация" data-kz="Кеңес">Консультация</span><span
+            class="svc-price svc-free" data-ru="Бесплатно" data-kz="Тегін">Бесплатно</span></div>
+        <div class="svc-cta"><a href="#booking" class="btn btn-green" data-ru="Записаться бесплатно →"
+            data-kz="Тегін жазылу →">Записаться бесплатно →</a></div>
+      </div>
+      <div class="services__panel reveal" id="panel-ortho">
+        <div class="svc-row"><span class="svc-name" data-ru="Металлические брекеты"
+            data-kz="Металл брекеттер">Металлические брекеты</span><span class="svc-price">от 300 000 ₸</span></div>
+        <div class="svc-row"><span class="svc-name" data-ru="Сапфировые брекеты" data-kz="Сапфир брекеттер">Сапфировые
+            брекеты</span><span class="svc-price">от 450 000 ₸</span></div>
+        <div class="svc-row"><span class="svc-name" data-ru="Элайнеры" data-kz="Элайнерлер">Элайнеры</span><span
+            class="svc-price">от 500 000 ₸</span></div>
+        <div class="svc-cta"><a href="#booking" class="btn btn-green" data-ru="Записаться бесплатно →"
+            data-kz="Тегін жазылу →">Записаться бесплатно →</a></div>
+      </div>
+      <div class="services__panel reveal" id="panel-kids">
+        <div class="svc-row"><span class="svc-name" data-ru="Осмотр и консультация" data-kz="Тексеру және кеңес">Осмотр
+            и консультация</span><span class="svc-price svc-free" data-ru="Бесплатно" data-kz="Тегін">Бесплатно</span>
+        </div>
+        <div class="svc-row"><span class="svc-name" data-ru="Лечение с анестезией" data-kz="Анестезиямен емдеу">Лечение
+            с анестезией</span><span class="svc-price">от 9 000 ₸</span></div>
+        <div class="svc-cta"><a href="#booking" class="btn btn-green" data-ru="Записаться бесплатно →"
+            data-kz="Тегін жазылу →">Записаться бесплатно →</a></div>
+      </div>
+      <div class="services__panel reveal" id="panel-surgery">
+        <div class="svc-row"><span class="svc-name" data-ru="Удаление зуба" data-kz="Тіс жұлу">Удаление зуба</span><span
+            class="svc-price">от 8 000 ₸</span></div>
+        <div class="svc-row"><span class="svc-name" data-ru="Сложное удаление" data-kz="Күрделі жұлу">Сложное
+            удаление</span><span class="svc-price">от 18 000 ₸</span></div>
+        <div class="svc-cta"><a href="#booking" class="btn btn-green" data-ru="Записаться бесплатно →"
+            data-kz="Тегін жазылу →">Записаться бесплатно →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag-wrap"><span class="section-tag" data-ru="Отзывы" data-kz="Пікірлер">Отзывы</span></div>
+        <h2 class="section-title" data-ru="Нам доверяют пациенты" data-kz="Пациенттер бізге сенеді">Нам доверяют <span
+            class="gradient-text">пациенты</span></h2>
+      </div>
+      <div class="reviews__slider reveal">
+        <div class="review-track" id="reviewTrack">
+          <div class="review-card">
+            <div class="rc-top">
+              <div class="rc-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ffa500)">М</div>
+              <div><strong>Маржан К.</strong><small>34 года</small></div>
+              <div class="rc-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+            <p>«Наконец-то нашла клинику, где не страшно! Айгерим апай очень внимательная, всё объяснила. Зуб вылечили
+              за один визит.»</p>
+            <div class="rc-source"><i class="fa-brands fa-google"></i> Google</div>
+          </div>
+          <div class="review-card">
+            <div class="rc-top">
+              <div class="rc-avatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">С</div>
+              <div><strong>Сергей Н.</strong><small>45 лет</small></div>
+              <div class="rc-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+            <p>«Поставил имплант у Рустема — доволен на 100%. Уже 8 месяцев, никаких проблем. Цена разумная, качество
+              отличное.»</p>
+            <div class="rc-source"><i class="fa-brands fa-google"></i> Google</div>
+          </div>
+          <div class="review-card">
+            <div class="rc-top">
+              <div class="rc-avatar" style="background:linear-gradient(135deg,#a8edea,#27AE60)">Д</div>
+              <div><strong>Динара Ж.</strong><small>28 лет</small></div>
+              <div class="rc-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+            <p>«Привожу сюда детей. Назгуль умеет найти подход к ребёнку, мои не боятся зубного врача — это невероятно!»
+            </p>
+            <div class="rc-source"><i class="fa-brands fa-2"></i> 2GIS</div>
+          </div>
+          <div class="review-card">
+            <div class="rc-top">
+              <div class="rc-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">А</div>
+              <div><strong>Алия М.</strong><small>31 год</small></div>
+              <div class="rc-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+            <p>«Сделала виниры у Дамира. Результат — потрясающий. Улыбаюсь теперь на все фото. Спасибо огромное всей
+              команде!»</p>
+            <div class="rc-source"><i class="fa-brands fa-instagram"></i> Instagram</div>
+          </div>
+        </div>
+        <div class="slider-nav">
+          <button class="slider-prev" onclick="slideReviews(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-next" onclick="slideReviews(1)"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <div class="reviews__trust reveal">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-brands fa-google"></i></div>
+          <div class="trust-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <strong>5.0</strong><small>Google Reviews</small>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">
+          <div class="trust-icon" style="font-size:22px;font-weight:900;color:var(--secondary)">2GIS</div>
+          <div class="trust-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <strong>4.9</strong><small>2GIS</small>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-users"></i></div>
+          <strong class="counter" data-target="4800">0</strong><small data-ru="пациентов"
+            data-kz="пациент">пациентов</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section booking" id="booking">
+    <div class="booking__bg"></div>
+    <div class="container">
+      <div class="booking__wrap reveal">
+        <div class="booking__info">
+          <span class="section-tag light" data-ru="Онлайн-запись" data-kz="Онлайн жазылу">Онлайн-запись</span>
+          <h2 style="font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;margin:16px 0 12px;"
+            data-ru="Запишитесь прямо сейчас" data-kz="Қазір жазылыңыз">Запишитесь<br />прямо сейчас</h2>
+          <p style="color:rgba(255,255,255,.75);font-size:16px;line-height:1.7;margin-bottom:32px;"
+            data-ru="Заполните форму — мы перезвоним в течение 15 минут."
+            data-kz="Нысанды толтырыңыз — 15 минут ішінде қоңырау шаламыз.">Заполните форму — мы перезвоним в течение 15
+            минут.</p>
+          <div class="bk-features">
+            <div class="bk-feat"><i class="fa-solid fa-check-circle"></i><span data-ru="Бесплатная консультация"
+                data-kz="Тегін кеңес">Бесплатная консультация</span></div>
+            <div class="bk-feat"><i class="fa-solid fa-check-circle"></i><span data-ru="Запись онлайн 24/7"
+                data-kz="Онлайн жазылу 24/7">Запись онлайн 24/7</span></div>
+            <div class="bk-feat"><i class="fa-solid fa-check-circle"></i><span data-ru="Подтверждение за 15 минут"
+                data-kz="15 минут ішінде растау">Подтверждение за 15 минут</span></div>
+            <div class="bk-feat"><i class="fa-solid fa-check-circle"></i><span data-ru="Без предоплаты"
+                data-kz="Алдын ала төлемсіз">Без предоплаты</span></div>
+          </div>
+          <div class="bk-contact">
+            <a href="tel:+77273124567" class="btn btn-ghost-sm"><i class="fa-solid fa-phone"></i> +7 (727) 312-45-67</a>
+            <a href="https://wa.me/77012345678" target="_blank" class="btn btn-wa-sm"><i
+                class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </div>
+        <div class="booking__form-wrap">
+          <form id="bookingForm" class="booking-form" onsubmit="submitForm(event)">
+            <h3 data-ru="Форма записи" data-kz="Жазылу нысаны">Форма записи</h3>
+            <div class="fg">
+              <label data-ru="Ваше имя" data-kz="Атыңыз">Ваше имя</label>
+              <input type="text" id="name" placeholder="Например, Айгерим" required />
+              <span class="ferr" id="nameError"></span>
+            </div>
+            <div class="fg">
+              <label data-ru="Телефон" data-kz="Телефон">Телефон</label>
+              <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required />
+              <span class="ferr" id="phoneError"></span>
+            </div>
+            <div class="fg">
+              <label data-ru="Услуга" data-kz="Қызмет">Услуга</label>
+              <select id="service">
+                <option value="" data-ru="Выберите услугу" data-kz="Қызмет таңдаңыз">Выберите услугу</option>
+                <option value="therapy" data-ru="Лечение кариеса" data-kz="Кариесті емдеу">Лечение кариеса</option>
+                <option value="whitening" data-ru="Отбеливание" data-kz="Ағарту">Отбеливание</option>
+                <option value="implants" data-ru="Имплантация" data-kz="Имплантация">Имплантация</option>
+                <option value="ortho" data-ru="Ортодонтия" data-kz="Ортодонтия">Ортодонтия</option>
+                <option value="kids" data-ru="Детская стоматология" data-kz="Балалар стоматологиясы">Детская
+                  стоматология</option>
+                <option value="surgery" data-ru="Хирургия" data-kz="Хирургия">Хирургия</option>
+              </select>
+            </div>
+            <div class="fg-row">
+              <div class="fg"><label data-ru="Дата" data-kz="Күні">Дата</label><input type="date" id="date" /></div>
+              <div class="fg"><label data-ru="Время" data-kz="Уақыты">Время</label>
+                <select id="time">
+                  <option>09:00</option>
+                  <option>10:00</option>
+                  <option>11:00</option>
+                  <option>12:00</option>
+                  <option>14:00</option>
+                  <option>15:00</option>
+                  <option>16:00</option>
+                  <option>17:00</option>
+                  <option>18:00</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-green btn-full" data-ru="Записаться на приём →"
+              data-kz="Қабылдауға жазылу →">Записаться на приём →</button>
+            <p class="form-note" data-ru="Нажимая кнопку, вы даёте согласие на обработку персональных данных"
+              data-kz="Батырманы басу арқылы жеке деректерді өңдеуге келісім бересіз">Нажимая кнопку, вы даёте согласие
+              на обработку персональных данных</p>
+          </form>
+          <div class="booking-success" id="bookingSuccess" style="display:none">
+            <div class="success-ring"><i class="fa-solid fa-check"></i></div>
+            <h3 data-ru="Заявка принята!" data-kz="Өтінім қабылданды!">Заявка принята!</h3>
+            <p data-ru="Мы позвоним вам в течение 15 минут." data-kz="15 минут ішінде қоңырау шаламыз.">Мы позвоним вам
+              в течение 15 минут.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section contacts" id="contacts">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag-wrap"><span class="section-tag" data-ru="Контакты" data-kz="Контактілер">Контакты</span>
+        </div>
+        <h2 class="section-title" data-ru="Как нас найти" data-kz="Бізді қалай табуға болады">Как нас <span
+            class="gradient-text">найти</span></h2>
+      </div>
+      <div class="contacts__grid">
+        <div class="contacts__left reveal">
+          <div class="ct-item">
+            <div class="ct-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4 data-ru="Адрес" data-kz="Мекенжай">Адрес</h4>
+              <p>г. Алматы, ул. Байзакова 121,<br />БЦ «Medpark», офис 3</p>
+            </div>
+          </div>
+          <div class="ct-item">
+            <div class="ct-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <h4 data-ru="Телефоны" data-kz="Телефондар">Телефоны</h4>
+              <p><a href="tel:+77273124567">+7 (727) 312-45-67</a></p>
+              <p><a href="https://wa.me/77012345678" target="_blank">+7 (701) 234-56-78 <span
+                    class="ct-wa">WhatsApp</span></a></p>
+            </div>
+          </div>
+          <div class="ct-item">
+            <div class="ct-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h4 data-ru="Часы работы" data-kz="Жұмыс сағаттары">Часы работы</h4>
+              <p data-ru="Пн–Пт: 9:00–20:00" data-kz="Дс–Жм: 9:00–20:00">Пн–Пт: 9:00–20:00</p>
+              <p data-ru="Сб: 10:00–18:00 · Вс: выходной" data-kz="Сб: 10:00–18:00 · Жс: демалыс">Сб: 10:00–18:00 · Вс:
+                выходной</p>
+            </div>
+          </div>
+          <div class="ct-item">
+            <div class="ct-icon"><i class="fa-solid fa-car"></i></div>
+            <div>
+              <h4 data-ru="Парковка" data-kz="Тұрақ">Парковка</h4>
+              <p data-ru="Бесплатная — 20 мест перед зданием" data-kz="Тегін — ғимарат алдында 20 орын">Бесплатная — 20
+                мест перед зданием</p>
+            </div>
+          </div>
+          <div class="ct-socials">
+            <a href="https://instagram.com/zharykdent" target="_blank" class="ct-social"><i
+                class="fa-brands fa-instagram"></i> @zharykdent</a>
+            <a href="mailto:info@zharykdent.kz" class="ct-social"><i class="fa-solid fa-envelope"></i>
+              info@zharykdent.kz</a>
+          </div>
+        </div>
+        <div class="contacts__map reveal">
+          <iframe src="https://maps.google.com/maps?q=Алматы+ул+Байзакова+121&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%" style="border:0" allowfullscreen loading="lazy" title="Карта"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="container footer__top-inner">
+        <a href="#" class="navbar__logo">
+          <div class="logo-icon"><svg width="28" height="28" viewBox="0 0 60 60" fill="none">
+              <path
+                d="M30 8C22 8 15 15 15 21c0 4 1.5 7 3 9.5L21 46c.8 2.5 2.5 3.5 4 3.5s3.2-.8 4-3.5l1-4 1 4c.8 2.5 2.5 3.5 4 3.5s3.2-1 4-3.5l3-15.5c1.5-2.5 3-5.5 3-9.5C45 15 38 8 30 8z"
+                fill="#fff" />
+              <circle cx="38" cy="17" r="3" fill="#27AE60" />
+            </svg></div>
+          <div class="logo-text"><span class="logo-main" style="color:#fff">Жарық Дент</span><span
+              class="logo-sub">Стоматология · Алматы</span></div>
+        </a>
+        <nav class="footer__nav">
+          <a href="#about" data-ru="О клинике" data-kz="Клиника туралы">О клинике</a>
+          <a href="#doctors" data-ru="Врачи" data-kz="Дәрігерлер">Врачи</a>
+          <a href="#services" data-ru="Услуги" data-kz="Қызметтер">Услуги</a>
+          <a href="#reviews" data-ru="Отзывы" data-kz="Пікірлер">Отзывы</a>
+          <a href="#contacts" data-ru="Контакты" data-kz="Контактілер">Контакты</a>
+        </nav>
+        <div class="footer__contacts">
+          <a href="tel:+77273124567">+7 (727) 312-45-67</a>
+          <a href="mailto:info@zharykdent.kz">info@zharykdent.kz</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2025 Жарық Дент. <span data-ru="Все права защищены." data-kz="Барлық құқықтар қорғалған.">Все права
+            защищены.</span></p>
+        <p data-ru="Лицензия МЗ РК №0012345" data-kz="МЗ РҚ лицензиясы №0012345">Лицензия МЗ РК №0012345</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/77012345678" target="_blank" class="wa-float" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-tip" data-ru="Написать в WhatsApp" data-kz="WhatsApp-қа жазу">Написать в WhatsApp</span>
+  </a>
+
+  <!-- COOKIE -->
+  <div class="cookie" id="cookieBanner">
+    <i class="fa-solid fa-cookie-bite"></i>
+    <span data-ru="Мы используем куки для улучшения сайта." data-kz="Сайтты жақсарту үшін куки қолданамыз.">Мы
+      используем куки для улучшения сайта.</span>
+    <button onclick="acceptCookies()" data-ru="Принять" data-kz="Қабылдау">Принять</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

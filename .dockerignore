@@ -1,0 +1,25 @@
+# ── Git ──────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── Node (если добавишь в будущем) ───────────────────
+node_modules/
+npm-debug.log*
+
+# ── OS файлы ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ──────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ── Nginx логи (не нужны в образе) ───────────────────
+*.log
+
+# ── Docker ───────────────────────────────────────────
+# (docker-compose.override.yml для локальных секретов)
+docker-compose.override.yml
