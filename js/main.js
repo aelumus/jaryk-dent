@@ -154,53 +154,111 @@ function switchTab(event, name) {
   if (panel) panel.classList.add('active');
 }
 
-// ---- Reviews slider ----
-let reviewIdx = 0;
+// ---- Reviews slider (infinite loop) ----
 const track = document.getElementById('reviewTrack');
-const cards = track ? track.querySelectorAll('.review-card') : [];
 const dotsContainer = document.getElementById('sliderDots');
-let slidesPerView = getSlidesPerView();
+let reviewIdx = 0;
+let isTransitioning = false;
+
+function getStride() {
+  const all = track.querySelectorAll('.review-card');
+  if (all.length < 2) return all[0]?.offsetWidth || 300;
+  // Use actual DOM offset difference for precise stride (handles any gap value)
+  return all[1].offsetLeft - all[0].offsetLeft;
+}
 
 function getSlidesPerView() {
   return window.innerWidth < 700 ? 1 : window.innerWidth < 1000 ? 2 : 3;
 }
 
-function buildDots() {
-  if (!dotsContainer) return;
-  dotsContainer.innerHTML = '';
-  const total = Math.ceil(cards.length - slidesPerView + 1);
-  for (let i = 0; i < total; i++) {
-    const d = document.createElement('div');
-    d.className = 'dot' + (i === reviewIdx ? ' active' : '');
-    d.onclick = () => goToSlide(i);
-    dotsContainer.appendChild(d);
+function initSlider() {
+  if (!track) return;
+  const origCards = [...track.querySelectorAll('.review-card')];
+  const spv = getSlidesPerView();
+
+  // Clone first and last slides for infinite loop
+  origCards.slice(0, spv).forEach(c => track.appendChild(c.cloneNode(true)));
+  origCards.slice(-spv).forEach(c => track.insertBefore(c.cloneNode(true), track.firstChild));
+
+  const allCards = track.querySelectorAll('.review-card');
+  reviewIdx = spv; // start after clones
+
+  // Position instantly to real first slide (use getStride after layout)
+  requestAnimationFrame(() => {
+    const w = getStride();
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${reviewIdx * w}px)`;
+  });
+
+  // Build dots
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    origCards.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.onclick = () => jumpTo(i);
+      dotsContainer.appendChild(d);
+    });
   }
+
+  // Transition end handler for infinite wrap
+  track.addEventListener('transitionend', () => {
+    isTransitioning = false;
+    const total = track.querySelectorAll('.review-card').length;
+    const spvNow = getSlidesPerView();
+    const wNow = getStride();
+
+    if (reviewIdx >= total - spvNow) {
+      reviewIdx = spvNow;
+      track.style.transition = 'none';
+      track.style.transform = `translateX(-${reviewIdx * wNow}px)`;
+    } else if (reviewIdx < spvNow) {
+      reviewIdx = total - spvNow * 2;
+      track.style.transition = 'none';
+      track.style.transform = `translateX(-${reviewIdx * wNow}px)`;
+    }
+    updateDots();
+  });
 }
 
-function goToSlide(i) {
-  slidesPerView = getSlidesPerView();
-  const maxIdx = Math.max(0, cards.length - slidesPerView);
-  reviewIdx = Math.max(0, Math.min(i, maxIdx));
-  if (!track) return;
-  const cardWidth = cards[0].offsetWidth + 24;
-  track.style.transform = `translateX(-${reviewIdx * cardWidth}px)`;
-  document.querySelectorAll('.dot').forEach((d, j) => d.classList.toggle('active', j === reviewIdx));
+function updateDots() {
+  const spv = getSlidesPerView();
+  const origLen = track ? (track.querySelectorAll('.review-card').length - spv * 2) : 0;
+  const realIdx = ((reviewIdx - spv) % origLen + origLen) % origLen;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === realIdx));
 }
 
 function slideReviews(dir) {
-  goToSlide(reviewIdx + dir);
+  if (isTransitioning || !track) return;
+  isTransitioning = true;
+  const w = getStride();
+  reviewIdx += dir;
+  track.style.transition = 'transform .5s cubic-bezier(.4,0,.2,1)';
+  track.style.transform = `translateX(-${reviewIdx * w}px)`;
+  updateDots();
+}
+
+function jumpTo(origI) {
+  if (!track) return;
+  const spv = getSlidesPerView();
+  const w = getStride();
+  reviewIdx = origI + spv;
+  track.style.transition = 'transform .5s cubic-bezier(.4,0,.2,1)';
+  track.style.transform = `translateX(-${reviewIdx * w}px)`;
+  updateDots();
 }
 
 window.addEventListener('resize', () => {
-  slidesPerView = getSlidesPerView();
-  buildDots();
-  goToSlide(reviewIdx);
+  if (!track) return;
+  const w = getStride();
+  track.style.transition = 'none';
+  track.style.transform = `translateX(-${reviewIdx * w}px)`;
 });
 
-buildDots();
+initSlider();
 
-// Auto-slide
-setInterval(() => slideReviews(1), 5000);
+// Auto-slide every 4s
+setInterval(() => slideReviews(1), 4000);
 
 // ---- Booking form ----
 function submitForm(e) {

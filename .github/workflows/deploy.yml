@@ -98,7 +98,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3
+        uses: nwtgck/actions-netlify@v2.1
         with:
           publish-dir: "."
           production-branch: main
@@ -129,7 +129,7 @@ jobs:
     if: always()
     steps:
       - name: Send Telegram message
-        uses: appleboy/telegram-action@master
+        uses: appleboy/telegram-action@v0.1.1
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}

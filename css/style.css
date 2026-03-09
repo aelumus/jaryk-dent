@@ -1916,7 +1916,7 @@ img {
 
   .navbar__menu {
     position: fixed;
-    top: 70px;
+    top: 54px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1945,6 +1945,54 @@ img {
   .btn-hero {
     padding: 14px 28px;
     font-size: 15px
+  }
+
+  /* Navbar compact on mobile */
+  .navbar__inner {
+    height: 54px
+  }
+
+  .logo-sub {
+    display: none
+  }
+
+  .logo-main {
+    font-size: 15px
+  }
+
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px
+  }
+
+  .logo-icon svg {
+    width: 22px;
+    height: 22px
+  }
+
+  .lang-btn {
+    padding: 4px 8px;
+    font-size: 11px
+  }
+
+  .lang-switcher {
+    padding: 2px;
+    gap: 1px
+  }
+
+  .btn-cta {
+    padding: 7px 12px;
+    font-size: 12px;
+    gap: 4px
+  }
+
+  .btn-cta i {
+    font-size: 12px
+  }
+
+  .navbar__actions {
+    gap: 7px
   }
 
   .hero__badges {
@@ -1987,6 +2035,51 @@ img {
     width: 100%;
     justify-content: center
   }
+
+  /* Contacts mobile — card style */
+  .contacts__grid {
+    grid-template-columns: 1fr;
+    gap: 24px
+  }
+
+  .contacts__left {
+    background: var(--gray);
+    border-radius: var(--rad-lg);
+    padding: 20px;
+    gap: 12px
+  }
+
+  .ct-item {
+    background: #fff;
+    border-radius: var(--rad);
+    padding: 14px 16px;
+    border: 1px solid var(--border)
+  }
+
+  .contacts__map {
+    min-height: 240px;
+    border-radius: var(--rad-lg)
+  }
+
+  .contacts__map iframe {
+    min-height: 240px
+  }
+
+  /* Reviews: 1 full-width card per view on mobile */
+  .reviews__slider {
+    overflow: hidden;
+    padding: 0
+  }
+
+  .review-track {
+    gap: 0
+  }
+
+  .review-card {
+    min-width: 100%;
+    width: 100%;
+    box-sizing: border-box
+  }
 }
 
 @media(max-width:480px) {
@@ -2017,10 +2110,6 @@ img {
 
   .reviews__trust {
     padding: 28px 24px
-  }
-
-  .review-card {
-    min-width: 280px
   }
 
   .footer__bottom-inner {
